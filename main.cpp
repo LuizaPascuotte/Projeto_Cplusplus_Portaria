@@ -5,7 +5,7 @@
 
 using namespace std;
 
-const int MAX_SOCIOS = 1000; //tamanho máximo que pode ter de sócios em meu clube, fora os independentes
+const int MAX_SOCIOS = 1000; //tamanho mÃ¡ximo que pode ter de sÃ³cios em meu clube, fora os independentes
 
 struct Socio {
     int numeroTitulo;
@@ -40,9 +40,9 @@ struct Clube {
             cout << "Nenhum socio cadastrado." << endl;
         } else {
             for (int i = 0; i < numSocios; ++i) {
-                cout << "Título: " << socios[i].numeroTitulo << ", Nome: " << socios[i].nomeTitular << endl;
+                cout << "TÃ­tulo: " << socios[i].numeroTitulo << ", Nome: " << socios[i].nomeTitular << endl;
                 cout << "Dependente 1: " << socios[i].nomeDependente1 << ", Dependente 2: " << socios[i].nomeDependente2 << endl;
-                cout << "Pagamento em dia: " << (socios[i].pagamentoMensalidade ? "Sim" : "Não") << endl << endl;
+                cout << "Pagamento em dia: " << (socios[i].pagamentoMensalidade ? "Sim" : "NÃ£o") << endl << endl;
             }
         }
     }
@@ -95,7 +95,7 @@ bool verificarInadimplencia(const Socio socios[], int numSocios, int numeroTitul
 
 void registrarEntrada(Clube& clube, int numeroTitulo) {
     if (verificarInadimplencia(clube.socios, clube.numSocios, numeroTitulo)) {
-        cout << "Socio de numero " << numeroTitulo << " esta inadimplente." << endl;
+        cout << "Socio de numero " << numeroTitulo << " esta em atraso." << endl;
         return;
     }
 
@@ -123,7 +123,7 @@ void registrarSaida(int numeroTitulo) {
 void gerarRelatorioVisitasDia(const Socio socios[], int numSocios) {
     ofstream arquivo("relatorio_visitas.txt");
     if (arquivo.is_open()) {
-        string data = "09-12-2023"; // Data estática do relatório
+        string data = "09-12-2023"; // Data estÃ¡tica do relatÃ³rio
         arquivo << data << endl;
         arquivo << "========" << endl;
 
@@ -186,7 +186,7 @@ int main() {
                 Socio novoSocio;
                 cout << "Numero do titulo: ";
                 cin >> novoSocio.numeroTitulo;
-                cin.ignore(); // Limpa o buffer (geralmente /n, espaços)
+                cin.ignore(); // Limpa o buffer (geralmente /n, espaÃ§os)
                 cout << "Nome do titular: ";
                 getline(cin, novoSocio.nomeTitular);
                 cout << "Nome do dependente 1: ";
